@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Emmye",
+    "Description": "Sinkinson",
+    "DiscountPercent": 0.772,
+    "Created_at": "2021-05-03T18:54:34Z",
+    "Modified_at": "2021-06-22T15:07:44Z"
+  },
+  {
+    "Name": "Natassia",
+    "Description": "Madine",
+    "DiscountPercent": 0.694,
+    "Created_at": "2021-04-07T16:54:46Z",
+    "Modified_at": "2021-06-14T02:10:41Z"
+  },
+  {
+    "Name": "Roman",
+    "Description": "Booley",
+    "DiscountPercent": 0.288,
+    "Created_at": "2021-05-08T16:56:45Z",
+    "Modified_at": "2021-04-06T19:54:16Z"
+  }
+]

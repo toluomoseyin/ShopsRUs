@@ -1,0 +1,12 @@
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\bin\Debug\net5.0\ShopRUs.Core.deps.json
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\bin\Debug\net5.0\ShopRUs.Core.dll
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\bin\Debug\net5.0\ref\ShopRUs.Core.dll
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\bin\Debug\net5.0\ShopRUs.Core.pdb
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.csprojAssemblyReference.cache
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.AssemblyInfo.cs
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.dll
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ref\ShopRUs.Core.dll
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.pdb

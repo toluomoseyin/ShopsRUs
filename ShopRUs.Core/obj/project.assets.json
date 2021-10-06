@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hp\\Desktop\\All folders\\ShopRUs\\ShopRUs.Core\\ShopRUs.Core.csproj",
+      "projectUniqueName": "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Core\\ShopRUs.Core.csproj",
       "projectName": "ShopRUs.Core",
-      "projectPath": "C:\\Users\\hp\\Desktop\\All folders\\ShopRUs\\ShopRUs.Core\\ShopRUs.Core.csproj",
+      "projectPath": "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Core\\ShopRUs.Core.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hp\\Desktop\\All folders\\ShopRUs\\ShopRUs.Core\\obj\\",
+      "outputPath": "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
