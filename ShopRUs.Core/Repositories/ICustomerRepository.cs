@@ -10,5 +10,6 @@ namespace ShopRUs.Core.Repositories
 {
     public interface ICustomerRepository:IRepository<Customer>
     {
+        Task<IEnumerable<Customer>> GetCustomerByName(string name);
     }
 }

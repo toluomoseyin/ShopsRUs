@@ -5,9 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using ShopRUs.Core.DapperRepositories;
+using ShopRUs.Core.Repositories;
 using ShopRUs.Infrastructure.DapperRepositories;
 using ShopRUs.Infrastructure.Data;
+using ShopRUs.Infrastructure.Repositories.DapperRepositories;
 using ShopRUs.Infrastructure.Seeder;
 using System;
 
@@ -32,7 +33,7 @@ namespace ShopRUs.API
             ////    services.AddDbContext<ShopRUsDbContext>(
             ////options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ICustomerRepository, CustomerRepository>();
-            //services.AddScoped<IDiscountRepository, DiscountRepository>();
+            services.AddScoped<IDiscountRepository, DiscountRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ShopRUs.API", Version = "v1" });

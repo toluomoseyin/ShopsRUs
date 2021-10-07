@@ -11,7 +11,7 @@ namespace ShopRUs.Core.DapperRepositories
     public interface ICustomerRepository
     {
         Task<IEnumerable<Customer>> GetCustomers();
-        Task<bool> CreateCustomer(CustomerDto customer);
+        Task<CustomerDto> CreateCustomer(CustomerDto customer);
         Task<Customer> GetCustomerById(int id);
         Task<Customer> GetCustomerByName(string name);
 

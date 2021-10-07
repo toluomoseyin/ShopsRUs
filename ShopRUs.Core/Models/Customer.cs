@@ -16,8 +16,8 @@ namespace ShopRUs.Core.Models
         public string Address { get; set; }
         public bool IsEmployee { get; set; }
         public bool IsAfilliated { get; set; }
-        public DateTime Created_at { get; set; }
-        public DateTime Modified_at { get; set; }
+        public DateTime Created_at { get; set; } = DateTime.Now;
+        public DateTime Modified_at { get; set; } = DateTime.Now;
         public int DiscountId { get; set; }
         public Discount Discount { get; set; }
 

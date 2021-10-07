@@ -65,15 +65,19 @@ namespace ShopRUs.Infrastructure.Seeder
                                                        "IsAfilliated       INTEGER                  NOT NULL, " +
                                                        "Created_at         TEXT                     NOT NULL," +
                                                        "DiscountId         INTEGER                  NOT NULL, FOREIGN KEY (DiscountId) REFERENCES Discount (Id));") ;
+
+
+                connection.Execute("INSERT INTO Customer ( FirstName,          LastName,    Email,                   PhoneNumber,     Address,                  IsEmployee, IsAfilliated,   Created_at,             DiscountId   ) " +
+
+                                          "  VALUES ('Cyrille',          'Waeland',    'cwaeland0@xrea.com',    '141-644-2578',  '66 Forest Way',           0 ,         1,             datetime('now'),         1 )," +
+                                                    "('Corri',           'Farnin',     'cfarnin1@cisco.com',    '625-419-8167',  '4570 Redwing Park',       1 ,         0,             datetime('now'),         2 )," +
+                                                    "('Mitchel',         'Mazey',      'mmazey2@prweb.com',     '402-177-5865',  '95415 Granby Junction',   1 ,         0,             datetime('now'),         2 )," +
+                                                    "('Bambi',           'Spurling',   'bspurling3@apache.org', '544-773-9354',  '170 Lakewood Way',        0 ,         1,             '2021-04-05T08:38:39Z',  1 );");
+
             }
 
 
-            connection.Execute("INSERT INTO Customer ( FirstName,          LastName,    Email,                   PhoneNumber,     Address,                  IsEmployee, IsAfilliated,   Created_at,             DiscountId   ) " +
-
-                                           "  VALUES ('Cyrille',          'Waeland',    'cwaeland0@xrea.com',    '141-644-2578',  '66 Forest Way',           0 ,         1,             datetime('now'),         1 )," +
-                                                     "('Corri',           'Farnin',     'cfarnin1@cisco.com',    '625-419-8167',  '4570 Redwing Park',       1 ,         0,             datetime('now'),         2 )," +
-                                                     "('Mitchel',         'Mazey',      'mmazey2@prweb.com',     '402-177-5865',  '95415 Granby Junction',   1 ,         0,             datetime('now'),         2 )," +
-                                                     "('Bambi',           'Spurling',   'bspurling3@apache.org', '544-773-9354',  '170 Lakewood Way',        0 ,         1,             '2021-04-05T08:38:39Z',  1 );");
+           
 
         }
 

@@ -23,7 +23,7 @@ namespace ShopRUs.Infrastructure.Seeder
 
 
         }
-
+         
         private static async Task SeedCustomer(ShopRUsDbContext shopRUsDbContext)
         {
             if (!shopRUsDbContext.Customers.Any())

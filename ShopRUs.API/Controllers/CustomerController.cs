@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShopRUs.Application.DTOs;
-using ShopRUs.Core.DapperRepositories;
 using ShopRUs.Core.Models;
+using ShopRUs.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -24,23 +24,33 @@ namespace ShopRUs.API.Controllers
         [ProducesResponseType(typeof(Customer), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Customer>> CreateCustomer([FromBody] CustomerDto customer)
         {
-            await _customerRepository.CreateCustomer(customer);
-            return CreatedAtRoute("GetCustomerByName", new { customerName = customer.FirstName }, customer);
+            var createdCustomer = new Customer
+            {
+                FirstName = customer.FirstName,
+                LastName = customer.LastName,
+                Address = customer.Address,
+                Email = customer.Email,
+                IsEmployee = customer.IsEmployee,
+                IsAfilliated = customer.IsAfilliated,
+                PhoneNumber = customer.PhoneNumber
+            };
+            var returnedCustomer= await _customerRepository.AddAsync(createdCustomer);
+            return CreatedAtRoute("GetCustomerByName", new { customerName = customer.FirstName }, createdCustomer);
         }
 
 
-        [HttpGet("{Id}", Name = "GetCustomer")]
+        [HttpGet("GetCustomer")]
         [ProducesResponseType(typeof(Customer), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
-            var customer = await _customerRepository.GetCustomerById(id);
+            var customer = await _customerRepository.GetByIdAsync(id);
             return Ok(customer);
         }
 
 
         [HttpGet("{customerName}", Name = "GetCustomerByName")]
         [ProducesResponseType(typeof(Customer), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Customer>> GetCustomerByName(string customerName)
+        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomerByName(string customerName)
         {
             var customer = await _customerRepository.GetCustomerByName(customerName);
             return Ok(customer);
@@ -50,7 +60,7 @@ namespace ShopRUs.API.Controllers
         [ProducesResponseType(typeof(IEnumerable<Customer>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Customer>> GetCustomers()
         {
-            var customer = await _customerRepository.GetCustomers();
+            var customer = await _customerRepository.GetAllAsync();
             return Ok(customer);
         }
 
