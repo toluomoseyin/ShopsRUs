@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "W0zfjtxYoHBMEW47C+oHPDkCSCD8CdbHNJabFLF1f9gPI16/xDzF8Z9MJI7lKYitZw77lhOtwAVgWXTDDlRO+Q==",
+  "dgSpecHash": "LmIZ9eB4/V1cDcemM3VDUsK8INJKzZCE/XpKLI7eQfIxwwZHn1r3+SY5kPmMTT+BobL4ifO5eVl9z84fGCfa1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.API\\ShopRUs.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.data.sqlite\\5.0.10\\microsoft.data.sqlite.5.0.10.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.10\\microsoft.data.sqlite.core.5.0.10.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",

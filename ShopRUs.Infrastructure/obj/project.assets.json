@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Dapper/2.0.90": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Dapper.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -25,6 +34,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.Data.Sqlite/5.0.10": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "5.0.10",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.0.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
         }
       },
       "Microsoft.Data.Sqlite.Core/5.0.10": {
@@ -390,9 +412,22 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
+      "ShopRUs.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ShopRUs.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopRUs.Application.dll": {}
+        }
+      },
       "ShopRUs.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ShopRUs.Application": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/ShopRUs.Core.dll": {}
         },
@@ -403,6 +438,24 @@
     }
   },
   "libraries": {
+    "Dapper/2.0.90": {
+      "sha512": "e4YjOLJptnpwHIbP8HxjaYf7So9lhUC43rvvGMEkH4Q4CiVlm4rOxYDo0HyuHlMQKj0U5Ob/nCMm52TUhTaZQg==",
+      "type": "package",
+      "path": "dapper/2.0.90",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.0.90.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
       "sha512": "Nxs7Z1q3f1STfLYKJSVXCs1iBl+Ya6E8o4Oy1bCxJ/rNI44E/0f6tbsrVqAWfB7jlnJfyaAtIalBVxPKUPQb4Q==",
       "type": "package",
@@ -427,6 +480,19 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
         "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.http.features.nuspec"
+      ]
+    },
+    "Microsoft.Data.Sqlite/5.0.10": {
+      "sha512": "QXBNNa06Yq+POptbmxdkEQW0awTHagikuL2OnwDv6DncebAAsDjGODfIHRJylnnlNNughmWYxn/MqkMHidB1Qg==",
+      "type": "package",
+      "path": "microsoft.data.sqlite/5.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/_._",
+        "microsoft.data.sqlite.5.0.10.nupkg.sha512",
+        "microsoft.data.sqlite.nuspec"
       ]
     },
     "Microsoft.Data.Sqlite.Core/5.0.10": {
@@ -1019,6 +1085,11 @@
         "version.txt"
       ]
     },
+    "ShopRUs.Application/1.0.0": {
+      "type": "project",
+      "path": "../ShopRUs.Application/ShopRUs.Application.csproj",
+      "msbuildProject": "../ShopRUs.Application/ShopRUs.Application.csproj"
+    },
     "ShopRUs.Core/1.0.0": {
       "type": "project",
       "path": "../ShopRUs.Core/ShopRUs.Core.csproj",
@@ -1027,8 +1098,11 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Dapper >= 2.0.90",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
+      "Microsoft.Data.Sqlite >= 5.0.10",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.10",
+      "ShopRUs.Application >= 1.0.0",
       "ShopRUs.Core >= 1.0.0"
     ]
   },
@@ -1064,6 +1138,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Application\\ShopRUs.Application.csproj": {
+              "projectPath": "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Application\\ShopRUs.Application.csproj"
+            },
             "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Core\\ShopRUs.Core.csproj": {
               "projectPath": "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Core\\ShopRUs.Core.csproj"
             }
@@ -1080,9 +1157,17 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.0.90, )"
+          },
           "Microsoft.AspNetCore.Http.Abstractions": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.Data.Sqlite": {
+            "target": "Package",
+            "version": "[5.0.10, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",

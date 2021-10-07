@@ -8,12 +8,23 @@
     ".NETCoreApp,Version=v5.0": {
       "ShopRUs.Infrastructure/1.0.0": {
         "dependencies": {
+          "Dapper": "2.0.90",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.Data.Sqlite": "5.0.10",
           "Microsoft.EntityFrameworkCore.Sqlite": "5.0.10",
+          "ShopRUs.Application": "1.0.0",
           "ShopRUs.Core": "1.0.0"
         },
         "runtime": {
           "ShopRUs.Infrastructure.dll": {}
+        }
+      },
+      "Dapper/2.0.90": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.90.36046"
+          }
         }
       },
       "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
@@ -37,6 +48,12 @@
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.18316"
           }
+        }
+      },
+      "Microsoft.Data.Sqlite/5.0.10": {
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "5.0.10",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.0.4"
         }
       },
       "Microsoft.Data.Sqlite.Core/5.0.10": {
@@ -343,7 +360,15 @@
       },
       "System.Memory/4.5.3": {},
       "System.Text.Encodings.Web/4.5.0": {},
+      "ShopRUs.Application/1.0.0": {
+        "runtime": {
+          "ShopRUs.Application.dll": {}
+        }
+      },
       "ShopRUs.Core/1.0.0": {
+        "dependencies": {
+          "ShopRUs.Application": "1.0.0"
+        },
         "runtime": {
           "ShopRUs.Core.dll": {}
         }
@@ -355,6 +380,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Dapper/2.0.90": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e4YjOLJptnpwHIbP8HxjaYf7So9lhUC43rvvGMEkH4Q4CiVlm4rOxYDo0HyuHlMQKj0U5Ob/nCMm52TUhTaZQg==",
+      "path": "dapper/2.0.90",
+      "hashPath": "dapper.2.0.90.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
       "type": "package",
@@ -369,6 +401,13 @@
       "sha512": "sha512-ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
       "path": "microsoft.aspnetcore.http.features/2.2.0",
       "hashPath": "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Data.Sqlite/5.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QXBNNa06Yq+POptbmxdkEQW0awTHagikuL2OnwDv6DncebAAsDjGODfIHRJylnnlNNughmWYxn/MqkMHidB1Qg==",
+      "path": "microsoft.data.sqlite/5.0.10",
+      "hashPath": "microsoft.data.sqlite.5.0.10.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite.Core/5.0.10": {
       "type": "package",
@@ -558,6 +597,11 @@
       "sha512": "sha512-Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
       "path": "system.text.encodings.web/4.5.0",
       "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
+    },
+    "ShopRUs.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ShopRUs.Core/1.0.0": {
       "type": "project",

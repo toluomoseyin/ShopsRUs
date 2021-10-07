@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShopRUs.Application\ShopRUs.Application.csproj" />
     <ProjectReference Include="..\ShopRUs.Infrastructure\ShopRUs.Infrastructure.csproj" />
   </ItemGroup>
 
