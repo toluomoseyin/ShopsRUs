@@ -361,14 +361,14 @@
       "System.Memory/4.5.3": {},
       "System.Text.Encodings.Web/4.5.0": {},
       "ShopRUs.Application/1.0.0": {
+        "dependencies": {
+          "ShopRUs.Core": "1.0.0"
+        },
         "runtime": {
           "ShopRUs.Application.dll": {}
         }
       },
       "ShopRUs.Core/1.0.0": {
-        "dependencies": {
-          "ShopRUs.Application": "1.0.0"
-        },
         "runtime": {
           "ShopRUs.Core.dll": {}
         }

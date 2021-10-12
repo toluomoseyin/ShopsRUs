@@ -25,7 +25,8 @@ namespace ShopRUs.Infrastructure.Repositories.DapperRepositories
         {
             using var connection = new SqliteConnection(_databaseConfig.Name);
             var affected = await connection.ExecuteScalarAsync<Customer>("INSERT INTO Customer (FirstName, LastName, Email, PhoneNumber,Address,IsEmployee,IsAfilliated,Created_at,DiscountId) VALUES (@FirstName, @LastName, @Email,@PhoneNumber,@Address,@IsEmployee,@IsAfilliated,@Created_at,@DiscountId)",
-                new { FirstName = customer.FirstName, LastName = customer.LastName, Email = customer.Email, PhoneNumber = customer.PhoneNumber, Address = customer.Address, IsEmployee = customer.IsEmployee, IsAfilliated = customer.IsAfilliated, Created_at = DateTime.Now, DiscountId = 1 });
+                new { FirstName = customer.FirstName, LastName = customer.LastName, Email = customer.Email, PhoneNumber = customer.PhoneNumber, Address = customer.Address, Created_at = DateTime.Now, DiscountId = 1 });
+
             return affected;
         }
 
@@ -84,11 +85,16 @@ namespace ShopRUs.Infrastructure.Repositories.DapperRepositories
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Customer>> GetCustomerByName(string name)
+        public async Task<Customer> GetCustomerByName(string name)
         {
             using var connection = new SqliteConnection(_databaseConfig.Name);
-            var customer = await connection.QueryAsync<Customer>("SELECT * FROM Customer WHERE FirstName=@Name", new { Name = name });
+            var customer = await connection.QueryFirstAsync<Customer>("SELECT * FROM Customer WHERE FirstName=@Name", new { Name = name });
             return customer;
+        }
+
+        public Task<Discount> GetDiscountByCustomerId(string customerId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

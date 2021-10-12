@@ -10,6 +10,3 @@ C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.dll
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ref\ShopRUs.Core.dll
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.pdb
-C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\bin\Debug\net5.0\ShopRUs.Application.dll
-C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\bin\Debug\net5.0\ShopRUs.Application.pdb
-C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Core\obj\Debug\net5.0\ShopRUs.Core.csproj.CopyComplete

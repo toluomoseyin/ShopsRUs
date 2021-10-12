@@ -28,7 +28,7 @@ namespace ShopRUs.Infrastructure.Migrations
                     b.Property<DateTime>("Created_at")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("DiscountId")
+                    b.Property<int>("CustomerTypeId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
@@ -36,12 +36,6 @@ namespace ShopRUs.Infrastructure.Migrations
 
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("IsAfilliated")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("IsEmployee")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
@@ -54,9 +48,23 @@ namespace ShopRUs.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DiscountId");
+                    b.HasIndex("CustomerTypeId");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("ShopRUs.Core.Models.CustomerType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomerTypes");
                 });
 
             modelBuilder.Entity("ShopRUs.Core.Models.Discount", b =>
@@ -68,37 +76,133 @@ namespace ShopRUs.Infrastructure.Migrations
                     b.Property<DateTime>("Created_at")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CustomerTypeId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<decimal>("DiscountPercent")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DiscountType")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("Modified_at")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("CustomerTypeId")
+                        .IsUnique();
 
                     b.ToTable("Discounts");
                 });
 
+            modelBuilder.Entity("ShopRUs.Core.Models.Invoice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("TotalDiscountedPrice")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Invoices");
+                });
+
+            modelBuilder.Entity("ShopRUs.Core.Models.ProductPurchaseDescription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Category")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("InvoiceId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProductName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InvoiceId");
+
+                    b.ToTable("ProductPurchaseDescriptions");
+                });
+
             modelBuilder.Entity("ShopRUs.Core.Models.Customer", b =>
                 {
-                    b.HasOne("ShopRUs.Core.Models.Discount", "Discount")
-                        .WithMany("Customers")
-                        .HasForeignKey("DiscountId")
+                    b.HasOne("ShopRUs.Core.Models.CustomerType", "CustomerType")
+                        .WithMany()
+                        .HasForeignKey("CustomerTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Discount");
+                    b.Navigation("CustomerType");
                 });
 
             modelBuilder.Entity("ShopRUs.Core.Models.Discount", b =>
                 {
-                    b.Navigation("Customers");
+                    b.HasOne("ShopRUs.Core.Models.CustomerType", "CustomerType")
+                        .WithOne("Discount")
+                        .HasForeignKey("ShopRUs.Core.Models.Discount", "CustomerTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomerType");
+                });
+
+            modelBuilder.Entity("ShopRUs.Core.Models.Invoice", b =>
+                {
+                    b.HasOne("ShopRUs.Core.Models.Customer", "Customer")
+                        .WithMany("invoices")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("ShopRUs.Core.Models.ProductPurchaseDescription", b =>
+                {
+                    b.HasOne("ShopRUs.Core.Models.Invoice", "Invoice")
+                        .WithMany("ProductPurchaseDescriptions")
+                        .HasForeignKey("InvoiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Invoice");
+                });
+
+            modelBuilder.Entity("ShopRUs.Core.Models.Customer", b =>
+                {
+                    b.Navigation("invoices");
+                });
+
+            modelBuilder.Entity("ShopRUs.Core.Models.CustomerType", b =>
+                {
+                    b.Navigation("Discount");
+                });
+
+            modelBuilder.Entity("ShopRUs.Core.Models.Invoice", b =>
+                {
+                    b.Navigation("ProductPurchaseDescriptions");
                 });
 #pragma warning restore 612, 618
         }

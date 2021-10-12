@@ -14,26 +14,37 @@ namespace ShopRUs.API.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly ICustomerTypeRepository _customerTypeRepository;
 
-        public CustomerController(ICustomerRepository customerRepository)
+        public CustomerController(ICustomerRepository customerRepository, ICustomerTypeRepository customerTypeRepository)
         {
+            _customerTypeRepository = customerTypeRepository ?? throw new ArgumentNullException(nameof(customerTypeRepository));
             _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
         }
+
+       
 
         [HttpPost]
         [ProducesResponseType(typeof(Customer), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Customer>> CreateCustomer([FromBody] CustomerDto customer)
         {
-            var createdCustomer = new Customer
+            var customerTypes =  await _customerTypeRepository.GetAll();
+            var createdCustomer = new Customer();
+          
+            foreach (var customerType in customerTypes)
             {
-                FirstName = customer.FirstName,
-                LastName = customer.LastName,
-                Address = customer.Address,
-                Email = customer.Email,
-                IsEmployee = customer.IsEmployee,
-                IsAfilliated = customer.IsAfilliated,
-                PhoneNumber = customer.PhoneNumber
-            };
+                if (customer.CusomerType == customerType.Type)
+                {
+                    createdCustomer.CustomerTypeId = customerType.Id;
+                }
+            }
+            createdCustomer.FirstName = customer.FirstName;
+            createdCustomer.LastName = customer.LastName;
+            createdCustomer.PhoneNumber = customer.PhoneNumber;
+            createdCustomer.Address = customer.Address;
+            createdCustomer.Email = customer.Email;
+           
+           
             var returnedCustomer= await _customerRepository.AddAsync(createdCustomer);
             return CreatedAtRoute("GetCustomerByName", new { customerName = customer.FirstName }, createdCustomer);
         }
@@ -41,8 +52,9 @@ namespace ShopRUs.API.Controllers
 
         [HttpGet("GetCustomer")]
         [ProducesResponseType(typeof(Customer), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Customer>> GetCustomer(int id)
+        public async Task<ActionResult<Customer>> GetCustomerById(int id)
         {
+            
             var customer = await _customerRepository.GetByIdAsync(id);
             return Ok(customer);
         }
@@ -50,7 +62,7 @@ namespace ShopRUs.API.Controllers
 
         [HttpGet("{customerName}", Name = "GetCustomerByName")]
         [ProducesResponseType(typeof(Customer), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomerByName(string customerName)
+        public async Task<ActionResult<Customer>> GetCustomerByName(string customerName)
         {
             var customer = await _customerRepository.GetCustomerByName(customerName);
             return Ok(customer);
@@ -58,7 +70,7 @@ namespace ShopRUs.API.Controllers
 
         [HttpGet( Name = "GetCustomers")]
         [ProducesResponseType(typeof(IEnumerable<Customer>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Customer>> GetCustomers()
+        public async Task<ActionResult<List<Customer>>> GetCustomers()
         {
             var customer = await _customerRepository.GetAllAsync();
             return Ok(customer);

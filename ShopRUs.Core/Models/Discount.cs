@@ -9,15 +9,12 @@ namespace ShopRUs.Core.Models
     public class Discount
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string DiscountType { get; set; }
         public decimal DiscountPercent { get; set; }
         public DateTime Created_at { get; set; }
         public DateTime Modified_at { get; set; }
-        public List<Customer> Customers { get; set; }
-        public Discount()
-        {
-            Customers = new List<Customer>();
-        }
+        public int CustomerTypeId { get; set; }
+        public CustomerType CustomerType { get; set; }
+
     }
 }

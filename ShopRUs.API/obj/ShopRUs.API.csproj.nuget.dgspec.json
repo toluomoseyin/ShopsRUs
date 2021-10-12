@@ -51,6 +51,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -111,7 +115,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Core\\ShopRUs.Core.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Core\\ShopRUs.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -169,11 +177,7 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {
-              "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Application\\ShopRUs.Application.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\GTB_Task\\ShopsRUs\\ShopRUs.Application\\ShopRUs.Application.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

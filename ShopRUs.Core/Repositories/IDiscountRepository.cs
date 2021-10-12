@@ -10,6 +10,7 @@ namespace ShopRUs.Core.Repositories
 {
     public interface IDiscountRepository:IRepository<Discount>
     {
-        Task<IEnumerable<Discount>> GetDiscountByType(string type);
+        Task<Discount> GetDiscountByType(string type);
+       
     }
 }

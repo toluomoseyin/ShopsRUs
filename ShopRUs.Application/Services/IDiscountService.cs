@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShopRUs.Application.DTOs;
+using ShopRUs.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,6 @@ namespace ShopRUs.Application.Services
 {
     public interface IDiscountService
     {
+        Task<Invoice> GetDiscount(InvoiceDto invoice, int userId);
     }
 }

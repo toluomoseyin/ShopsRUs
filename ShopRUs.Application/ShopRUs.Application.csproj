@@ -8,4 +8,8 @@
     <Folder Include="Responses\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShopRUs.Core\ShopRUs.Core.csproj" />
+  </ItemGroup>
+
 </Project>

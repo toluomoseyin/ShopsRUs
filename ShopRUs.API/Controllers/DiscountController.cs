@@ -28,12 +28,15 @@ namespace ShopRUs.API.Controllers
         {
             var discountCreated = new Discount
             {
-                Name = discount.Name,
-                Description = discount.Description,
+                DiscountType = discount.Type,
                 DiscountPercent = discount.DiscountPercent,
+                CustomerType= new CustomerType
+                {
+                    Type=discount.CustomerType
+                }
             };
             var returnedDiscount = await _discountRepository.AddAsync(discountCreated);
-            return CreatedAtRoute("GetCustomerByName", new { customerName = discount.Name }, returnedDiscount);
+            return CreatedAtRoute("GetDiscountByType", new { type = discount.Type }, discount);
         }
 
         [HttpGet(Name = "GetDiscounts")]
@@ -47,7 +50,7 @@ namespace ShopRUs.API.Controllers
 
         [HttpGet("{type}", Name = "GetDiscountByType")]
         [ProducesResponseType(typeof(Discount), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<Discount>>> GetDiscountByType(string type)
+        public async Task<ActionResult<Discount>> GetDiscountByType(string type)
         {
             var discounts = await _discountRepository.GetDiscountByType(type);
             return Ok(discounts);

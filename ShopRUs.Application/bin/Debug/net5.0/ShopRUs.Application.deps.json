@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "ShopRUs.Application/1.0.0": {
+        "dependencies": {
+          "ShopRUs.Core": "1.0.0"
+        },
         "runtime": {
           "ShopRUs.Application.dll": {}
+        }
+      },
+      "ShopRUs.Core/1.0.0": {
+        "runtime": {
+          "ShopRUs.Core.dll": {}
         }
       }
     }
   },
   "libraries": {
     "ShopRUs.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopRUs.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -10,3 +10,6 @@ C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Application\obj\Debug\net5.0\ShopR
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Application\obj\Debug\net5.0\ref\ShopRUs.Application.dll
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Application\obj\Debug\net5.0\ShopRUs.Application.pdb
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Application\obj\Debug\net5.0\ShopRUs.Application.csprojAssemblyReference.cache
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Application\bin\Debug\net5.0\ShopRUs.Core.dll
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Application\bin\Debug\net5.0\ShopRUs.Core.pdb
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.Application\obj\Debug\net5.0\ShopRUs.Application.csproj.CopyComplete

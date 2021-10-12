@@ -62,3 +62,7 @@ C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.API\obj\Debug\net5.0\ShopRUs.API.d
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.API\obj\Debug\net5.0\ref\ShopRUs.API.dll
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.API\obj\Debug\net5.0\ShopRUs.API.pdb
 C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.API\obj\Debug\net5.0\ShopRUs.API.genruntimeconfig.cache
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\hp\Desktop\GTB_Task\ShopsRUs\ShopRUs.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
