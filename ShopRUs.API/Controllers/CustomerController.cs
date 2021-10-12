@@ -28,6 +28,7 @@ namespace ShopRUs.API.Controllers
         [ProducesResponseType(typeof(Customer), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Customer>> CreateCustomer([FromBody] CustomerDto customer)
         {
+           
             var customerTypes =  await _customerTypeRepository.GetAll();
             var createdCustomer = new Customer();
           

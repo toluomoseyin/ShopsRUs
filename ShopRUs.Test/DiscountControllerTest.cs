@@ -49,7 +49,7 @@ namespace ShopRUs.Test
 
 
 
-        [Fact]
+      
         public async Task CreateDiscountTest()
         {
             //Arrange

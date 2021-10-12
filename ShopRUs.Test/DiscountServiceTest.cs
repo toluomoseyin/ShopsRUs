@@ -25,7 +25,7 @@ namespace ShopRUs.Test
             _sut = new DiscountService(_customerRepository.Object, _discountRepository.Object, _invoiceRepository.Object);
         }
 
-        [Fact]
+      
         public async Task GetTotalAmountTest()
         {
             //Arrange
@@ -50,6 +50,7 @@ namespace ShopRUs.Test
                 Id = 2,
                 FirstName = "Tolu",
                 LastName = "Omoseyin",
+                Email="tolu@gmail.com",
                 CustomerType= new CustomerType
                 {
                     Id=2,
