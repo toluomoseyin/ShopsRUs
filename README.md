@@ -27,4 +27,24 @@ Follow these steps to get your development environment set up
 <li>Click on the solution file to open the application</li>
 </ul>
 
+# Project Architecture
+<ul>
+  <li>DDD - Domain Driven Design</li>
+<li>Clean or Onion Architecture</li>
+ <li>Rest Architecture</li>
+</ul>
 
+# Design Pattern
+<ul>
+<li>Repository Design Pattrern</li>
+</ul>
+
+
+# Tools
+<ul>
+<li>Asp.NetCore</li>
+<li>Sqlite</li>
+<li>Entity Framework core</li>
+<li>SwaggerUI</li>
+  
+</ul>
